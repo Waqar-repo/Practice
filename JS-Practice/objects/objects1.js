@@ -71,7 +71,7 @@ console.log(jsUser);
 
 
 
-//Artical to explain what I have learned
+//Article to explain what I have learned
 
 
 /*
