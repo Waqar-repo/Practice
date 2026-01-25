@@ -99,4 +99,22 @@ So above line has passed an argument when calling a function
 
 
 
+Another important thing in functions is rest operator. Which is similar to spread operator but 
+when we pass in function definition/declaration it is called spread operator.
+
+Function function-name(…num){
+Return num + num
+}
+
+Function-name(2,4,5,5)
+
+Use of spread operator is commonly used when using Api or when user adding item to cart and, in these cases, 
+when we have no idea how many parameter we will need. User can add hundreds of items 
+and it would not be good practice to add hundreds of parameters. 
+so, what the rest operator do is that it will take as many as arguments and save all values come from argument to an array 
+and returns it. It was introduced in ES6
+
+
+
+
  */
