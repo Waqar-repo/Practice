@@ -5,39 +5,57 @@ import './App.css'
 import Button from './Component/button'
 
 function App() {
-  const [likeCount,setCount] = useState(0)
-const [unlikeCount,setUnlikeCount]= useState(0)
-const [like,setLike]= useState(false)
-const [unlike,setLikeUnlike]= useState(false)
+  const [happyCount,setCountHappy] = useState(0)
+const [unhappyCount,setCountUnhappy]= useState(0)
+const [neutralCount,setCountNeutral]= useState(0)
+const [happy,sethappy]= useState(false)
+const [sad,setSad]= useState(false)
+const [neutral,setNeutral]= useState(false)
 
-  function handlerLike () {
+
+  function handlerHappy () {
     
-setLike(!like)
-  setCount(likeCount+1)
+sethappy(!happy)
+  setCountHappy(happyCount+1)
 
   
   }
 
-    function handlerUnike () {
+    function handlerSad () {
   
-      setLikeUnlike(!unlike)
+      setSad(!sad)
 
-  setUnlikeCount(unlikeCount+1)
+  setCountUnhappy(unhappyCount+1)
   
   }
+
+    function handlerneutral () {
+  
+      setNeutral(!neutral)
+
+  setCountNeutral(neutralCount+1)
+  
+  }
+
+
+
   function reset(){
-setCount(0)
-setUnlikeCount(0)
+  setCountNeutral(0)
+    setCountUnhappy(0)
+      setCountHappy(0)
   }
 
   return (
     <>
-      <Button clickHandler={handlerLike} Count={likeCount} likeUnlike={like} >
-        like
+      <Button clickHandler={handlerHappy} Count={happyCount} likeUnlike={happy} >
+        Happy
       </Button>
 
-      <Button clickHandler={handlerUnike} Count={unlikeCount} likeUnlike={unlike}> 
-        unlike
+      <Button clickHandler={handlerSad} Count={unhappyCount} likeUnlike={sad}> 
+        Sad
+      </Button>
+      <Button clickHandler={handlerneutral} Count={neutralCount} likeUnlike={neutral}> 
+        Neutral
       </Button>
       <Button clickHandler={reset}> 
         Reset

@@ -3,9 +3,9 @@ const Button = ({likeUnlike,clickHandler,Count,children}) =>{
   return (
     
     <>
-    <button onClick={clickHandler}>{children}
+    <button onClick={clickHandler} happy={likeUnlike}>{children}
   </button>
-  <p>{Count}</p>
+  {Count > 0 && <p>You clicked {children} {Count} times</p>}
   </>
   )
 }
