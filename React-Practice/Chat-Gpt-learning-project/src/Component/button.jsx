@@ -1,11 +1,11 @@
 
-const Button = ({likeUnlike,clickHandler,totalCount}) =>{
+const Button = ({likeUnlike,clickHandler,Count,children}) =>{
   return (
     
     <>
-    <button onClick={clickHandler}>{likeUnlike === true ? 'Unlike' : ' like'}
+    <button onClick={clickHandler}>{children}
   </button>
-  <p>{totalCount}</p>
+  <p>{Count}</p>
   </>
   )
 }
