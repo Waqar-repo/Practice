@@ -1,6 +1,6 @@
 import { Children } from 'react'
 import styles from '../Component/Button.module.css'
-const Button = ({isActive,clickHandler,children,counter}) =>{
+const Button = ({isActive,clickHandler,children,counter,maxCountText}) =>{
   return (
     
     <>
@@ -8,7 +8,7 @@ const Button = ({isActive,clickHandler,children,counter}) =>{
     
   </button>
   {isActive && <p> Selected Mood: {children} {counter}</p>}
- 
+{maxCountText && isActive ? <p>You have been more than 5 times {children}</p> : null}
   </>
   )
 }

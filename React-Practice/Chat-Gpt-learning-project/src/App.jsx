@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -6,45 +6,87 @@ import Button from './Component/button';
 
 function App() {
   const [activeMood, setIsActiveMood] = useState('');
-  const [countHappy, setCountHappy] = useState(0);
-  const [countSad, setCountSad] = useState(0);
-  const [countNeutral, setCountNeutral] = useState(0);
+  const [count, setCount] = useState(0);
+  const [isMaxCount, setMaxCount] = useState(false)
+
 
   const handleMood = (mood) => {
     setIsActiveMood(mood);
+    return mood
   };
-
+useEffect(()=>{
+if(count >= 5){
+  // setIsActiveMood('')
+  setMaxCount(true)
+  
+} else{
+  setMaxCount(false)
+}
+},[count])
   return (
     <>
       <Button
-        clickHandler={() => {
-          handleMood('happy');
-          setCountHappy(countHappy + 1);
-        }}
-        isActive={activeMood === 'happy'}
-        counter={countHappy}
+      maxCountText = {isMaxCount}
+          clickHandler={() => {
+            
+            
+            if(activeMood === 'happy'){
+              setCount(count + 1);
+             
+              
+              
+            } else{
+              setCount(0)
+              handleMood('happy');
+            }
+          
+          }}
+          isActive={activeMood === 'happy'}
+        counter={count}
+        
       >
         Happy
       </Button>
 
       <Button
+      maxCountText = {isMaxCount}
         clickHandler={() => {
-          handleMood('sad');
-          setCountSad(countSad + 1);
+          
+          if(activeMood === 'sad'){
+            setCount(count + 1);
+         
+            
+          } else{
+            handleMood('sad');
+            setCount(0)
+          }
+       
         }}
         isActive={activeMood === 'sad'}
-        counter={countSad}
+        counter={count}
+        
       >
         Sad
       </Button>
 
       <Button
+      maxCountText = {isMaxCount}
         clickHandler={() => {
-          handleMood('neutral');
-          setCountNeutral(countNeutral + 1);
+         
+          
+          if(activeMood === 'neutral'){
+            setCount(count + 1);
+            
+            
+            
+          } else{
+            handleMood('neutral');
+            setCount(0)
+          }
         }}
         isActive={activeMood === 'neutral'}
-        counter={countNeutral}
+        counter={count}
+        
       >
         Neutral
       </Button>
@@ -52,9 +94,9 @@ function App() {
       <Button
         clickHandler={() => {
           handleMood('');
-          setCountHappy(0);
-          setCountSad(0);
-          setCountNeutral(0);
+       
+          setCount(0);
+        
         }}
         isActive={activeMood === false}
       >
