@@ -1,14 +1,10 @@
 import React from 'react';
 
-export default function BooksCard({ title, author,image }) {
+export default function BooksCard({ title, author, image }) {
   return (
-    // <div className='container'>
+    
     <div className="cardContainer">
-      <img
-        src={image}
-        alt="image"
-        
-      />
+      <img src={image} alt="image" />
       <p>{title}</p>
       <p>
         {' '}

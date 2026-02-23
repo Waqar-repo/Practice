@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import BooksCard from './BooksCard';
+import LoadingCard from './Loading';
 
 export default function BooksContainer() { 
   // userSearch || 
   const [books,setbooks] = useState([])
+  const [loading,setloading] = useState(true)
   
   useEffect(() => {
     const searchTerm = 'subject:thriller'
@@ -15,6 +17,7 @@ export default function BooksContainer() {
         .then((data)=>{
           // console.log(data.docs)
           setbooks(data.docs)
+          setloading(false)
        
         })
         
@@ -23,18 +26,32 @@ export default function BooksContainer() {
       }
    
   },[]);
-console.log(books)
+if(loading){
+  
+  return (
+  <div className='container'>
+{
+  [...Array(8)].map((_,index)=>{
+  return <LoadingCard key={index} />
+  })
+
+}
+  </div>
+
+  
+)
+
+}
   return(
   <>
 <div className='container'>
 
   {
 books.map((book)=>{
-  console.log(book.cover_i)
-const imageUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+  // console.log(book.cover_i)
+  const imageUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
   return (
-
-    <BooksCard
+   <BooksCard
     title={book.title}
     author={book.author_name?.[0] || 'Unknown'}
     key={book.cover_i}
