@@ -30,3 +30,19 @@
    gap: 50px;
    margin:30px ;
 }
+.headerContent{
+  display: flex;
+  gap: 40px;
+  justify-content: left;
+  align-items: center;
+}
+.searchContent{
+  margin-left: -20px;
+  }
+  .aboutUs{
+    justify-content: flex-end;
+    cursor: pointer;
+  margin-left:  auto;
+  text-decoration: underline;
+  
+  }

@@ -11,6 +11,6 @@ export default function BooksCard({ title, author, image }) {
         by <b>{author}</b>
       </p>
     </div>
-    // </div>
+  
   );
 }
