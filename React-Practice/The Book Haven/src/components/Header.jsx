@@ -1,24 +1,23 @@
 import React from 'react'
 import AboutUs from './AboutUs'
+import { Link } from 'react-router-dom'
 
-export default function Header({setQuery}) {
+export default function Header() {
 
   return (
    <>
-   <div className="headerContent">
+   <div className='headerContent'>
+   <Link to='/' className="headerContent">
+      <div className="headerContent">
         <h1 className='Moto'>The Book Haven</h1>
-  
-    <form action="">
- 
-    <div className="searchContent">
-    <input for type="text" placeholder='Search a Book' htmlFor='book' onChange={(e)=> 
-      setQuery(e.target.value.toLowerCase()) 
-      } />
-   
-    </div>
-    </form>
+        </div>
+   </Link>
 
-<AboutUs />
+  
+
+<Link to="/about" className="aboutUs">About us</Link>
+
+
    </div>
    </>
   )
