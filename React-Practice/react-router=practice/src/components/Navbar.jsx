@@ -4,8 +4,10 @@ import { Link } from 'react-router'
 export default function Navbar() {
   return (
     <>
-    <Link to={'/'}>Home</Link>
-    <Link to={'/about'}>About</Link>
+    <div className='nav'>
+      <Link to={'/'} className='home'>Home</Link>
+    <Link to={'/about'} className='about'>About</Link>
+    </div>
     </>
   )
 }

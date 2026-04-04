@@ -109,3 +109,28 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+.nav{
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 60px;
+  margin-top: 22px;
+}
+.home{
+  color: red;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 32px;
+  overflow: hidden;
+
+}
+.about{
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 24px;
+}
+.about:hover{
+  color: wheat;
+}
+.home:hover{
+  color: wheat;
+}
